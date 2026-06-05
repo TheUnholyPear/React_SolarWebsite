@@ -1,11 +1,12 @@
 {
   "name": "uksg-website",
-  "homepage": "https://TheUnholyPear.github.io/React_SolarWebsite/",
+  "homepage": "https://ryanbain.co.uk",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
