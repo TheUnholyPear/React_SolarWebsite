@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__puppeteer__puppeteer_evaluate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "WebFetch(domain:uksolargeneration.co.uk)",
+      "mcp__puppeteer__puppeteer_navigate"
+    ]
+  }
+}
