@@ -1,0 +1,109 @@
+/* ============================================================
+   UK Solar Generation — Component styles
+   Faithful CSS port of react/@/components/ui/* (Relume export).
+   Requires colors_and_type.css (for tokens & scheme classes).
+   ============================================================ */
+
+/* ---------- Buttons ---------- */
+.uksg-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  font-family: var(--uksg-btn-font, var(--font-heading)); font-weight: 600; white-space: nowrap;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-button);
+  padding: 6px 12px; font-size: var(--text-regular); line-height: 1.5;
+  border: 1px solid transparent; cursor: pointer;
+  transition: all .2s ease-in-out; text-decoration: none;
+}
+.uksg-btn--sm { padding: 4px 10px; }
+.uksg-btn:disabled { opacity: .5; pointer-events: none; }
+
+/* primary = solid Selective Yellow */
+.uksg-btn--primary {
+  background: var(--color-selective-yellow);
+  border-color: var(--color-selective-yellow);
+  color: var(--color-neutral-darkest);
+}
+.uksg-btn--primary:hover {
+  background: var(--color-selective-yellow-dark);
+  border-color: var(--color-selective-yellow-dark);
+}
+/* secondary = transparent + hairline border + blur */
+.uksg-btn--secondary {
+  background: transparent; color: var(--color-scheme-text);
+  border-color: var(--color-scheme-border); backdrop-filter: blur(10px);
+}
+.uksg-btn--secondary:hover { background: var(--color-black-5); }
+.scheme-5 .uksg-btn--secondary:hover, .scheme-6 .uksg-btn--secondary:hover { background: var(--color-white-10); }
+/* alternate = solid white (use on dark / media) */
+.uksg-btn--alternate {
+  background: var(--color-white); color: var(--color-neutral-darkest);
+  border-color: var(--color-white);
+}
+.uksg-btn--alternate:hover { background: var(--color-neutral-lighter); border-color: var(--color-neutral-lighter); }
+/* blue = cornflower blue solid (secondary brand colour, for "explore / learn" CTAs) */
+.uksg-btn--blue {
+  background: var(--color-cornflower-blue); color: var(--color-white);
+  border-color: var(--color-cornflower-blue);
+}
+.uksg-btn--blue:hover { background: var(--color-cornflower-blue-dark); border-color: var(--color-cornflower-blue-dark); }
+/* secondary on dark/media */
+.uksg-btn--secondary-alt {
+  background: transparent; color: var(--color-white);
+  border-color: rgba(255,255,255,.38); backdrop-filter: blur(10px);
+}
+.uksg-btn--secondary-alt:hover { background: var(--color-white-10); border-color: rgba(255,255,255,.6); }
+/* link */
+.uksg-btn--link { background: transparent; border: 0; padding: 0; gap: 8px; color: var(--color-scheme-text); }
+
+/* ---------- Card ---------- */
+.uksg-card {
+  overflow: hidden; border-radius: var(--radius-card);
+  border: 1px solid var(--color-scheme-border);
+  background: var(--color-scheme-foreground);
+  color: var(--color-scheme-text);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.uksg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+}
+
+/* ---------- Badge ---------- */
+.uksg-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: var(--radius-badge); padding: 4px 8px;
+  font-size: var(--text-small); font-weight: 600; line-height: 1.2;
+  border: 1px solid var(--color-scheme-border); color: var(--color-scheme-text);
+}
+
+/* ---------- Input (underline style) ---------- */
+.uksg-input {
+  width: 100%; min-height: 32px; padding: 8px 0;
+  font-family: var(--font-body); font-size: var(--text-regular);
+  background: transparent; color: var(--color-scheme-text);
+  border: 0; border-bottom: 1px solid var(--color-scheme-border);
+  transition: border-color .2s ease-in-out; outline: none;
+}
+.uksg-input::placeholder { color: var(--color-neutral); }
+.uksg-input:focus { border-bottom-color: var(--color-scheme-text); }
+.scheme-5 .uksg-input::placeholder, .scheme-6 .uksg-input::placeholder { color: var(--color-white-50); }
+
+/* ---------- Divider ---------- */
+.uksg-divider { height: 1px; width: 100%; background: var(--color-scheme-border); }
+
+/* ---------- Icons — Material Symbols Rounded SVG (loaded as <img>) ----------
+   Faithful to source: navbar loads icons from the jsdelivr CDN as <img>.
+   Default SVG fill is black (correct on light schemes). On dark schemes the
+   source whitens icons with filter: brightness(0) invert(1) (its `logo-alt`
+   trick) — we mirror that automatically below. Helper:
+     <img class="uksg-i" src="...rounded/check.svg" alt="">
+   Add .uksg-i--accent to tint to the brand yellow. CDN base lives in JS as
+   ICONS.url(name) in the UI kit. */
+.uksg-i { width: 24px; height: 24px; display: inline-block; object-fit: contain; flex: none; }
+.uksg-i--sm { width: 20px; height: 20px; }
+.uksg-i--lg { width: 32px; height: 32px; }
+/* whiten on dark schemes / inverted contexts */
+.scheme-5 .uksg-i, .scheme-6 .uksg-i, .uksg-i--invert,
+.uksg-on-dark .uksg-i { filter: brightness(0) invert(1); }
+/* tint to brand yellow (approx of #FFB400 via filter) */
+.uksg-i--accent { filter: brightness(0) saturate(100%) invert(72%) sepia(72%) saturate(1352%) hue-rotate(360deg) brightness(103%) contrast(104%); }

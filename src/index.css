@@ -1,0 +1,17 @@
+html, body { margin: 0; background: #fff; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-neutral-darkest);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+@keyframes kitFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* responsive grid collapse */
+@media (max-width: 991px) {
+  .kit-2col, .kit-3col, .kit-case { grid-template-columns: 1fr !important; }
+  .kit-desktop-nav { display: none !important; }
+  .kit-mobile-toggle { display: block !important; }
+}
+@media (min-width: 992px) { .kit-mobile-menu { display: none; } }
