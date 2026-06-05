@@ -107,7 +107,7 @@ export function Features({ onQuote }) {
     { n: "02", eyebrow: "Backup power", title: "Store energy and use it when you need it",
       body: "Pair solar with battery storage to maximise self-consumption and gain energy independence. Keep the lights on even when the grid goes down.", img: "powerwall-full.jpg", to: "/battery-storage" },
     { n: "03", eyebrow: "Clean transport", title: "Charge your vehicle with solar energy",
-      body: "Install a home or workplace EV charger and power your electric vehicle with clean solar energy. We integrate chargers with your solar system for seamless operation.", img: "features-2.jpg", to: "/solar-pv" },
+      body: "Install a home or workplace EV charger and power your electric vehicle with clean solar energy. We integrate chargers with your solar system for seamless operation.", img: "features-2.jpg", to: "/ev-charging" },
   ];
   return (
     <section id="services" className="scheme-3">
@@ -301,7 +301,6 @@ export function HowItWorks({ onQuote }) {
         </div>
         <div style={{ marginTop: 80, display: "flex", gap: 16, alignItems: "center" }}>
           <Button variant="primary" onClick={onQuote}>Get started</Button>
-          <Button variant="link" iconRight={<Icon name="chevron_right" size={20} />} onClick={() => scrollToId("reviews")}>More</Button>
         </div>
       </div>
     </section>

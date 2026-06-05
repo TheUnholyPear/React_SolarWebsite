@@ -13,7 +13,7 @@ export default function Navbar({ onQuote }) {
     { icon: "tools_installation_kit", name: "Solar panels", desc: "Residential solar panel installation", to: "/solar-pv" },
     { icon: "storage", name: "Battery storage", desc: "Store energy and maximise savings", to: "/battery-storage" },
     { icon: "add_business", name: "Commercial solar", desc: "Large-scale systems for businesses", to: "/commercial-solar" },
-    { icon: "workspaces", name: "EV charging", desc: "Home and workplace charging solutions", to: "/solar-pv" },
+    { icon: "workspaces", name: "EV charging", desc: "Home and workplace charging solutions", to: "/ev-charging" },
   ];
   const company = [
     { icon: "history", name: "About us", desc: "Our story since 2010", to: "/" },
@@ -31,7 +31,7 @@ export default function Navbar({ onQuote }) {
     { label: "Commercial", to: "/commercial-solar" },
   ];
   const mobileLinks = [...links,
-    { label: "EV charging", to: "/solar-pv" },
+    { label: "EV charging", to: "/ev-charging" },
     { label: "Case studies", to: "/case-studies" },
     { label: "Reviews", to: "/#reviews" },
     { label: "Contact", to: "/#contact" },

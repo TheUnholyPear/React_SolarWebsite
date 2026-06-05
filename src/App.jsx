@@ -7,7 +7,7 @@ import {
 } from './components/TweaksPanel';
 import { Hero, TrustBar, Features, Benefits, HowItWorks } from './components/SectionsA';
 import { CaseStudies, Testimonials, Pricing, Faq, Cta, Contact, Footer } from './components/SectionsB';
-import { SolarPVPage, BatteryPage, CommercialPage, CaseStudiesPage, BlogPage } from './components/Pages';
+import { SolarPVPage, BatteryPage, EVChargingPage, CommercialPage, CaseStudiesPage, BlogPage } from './components/Pages';
 import { scrollToId } from './components/primitives';
 
 const TWEAK_DEFAULTS = {
@@ -29,6 +29,7 @@ const PAGE_TITLES = {
   '/': 'UK Solar Generation — Solar Panels, Battery Storage & EV Charging',
   '/solar-pv': 'Solar Panels | UK Solar Generation',
   '/battery-storage': 'Battery Storage | UK Solar Generation',
+  '/ev-charging': 'EV Charging | UK Solar Generation',
   '/commercial-solar': 'Commercial Solar | UK Solar Generation',
   '/case-studies': 'Case Studies | UK Solar Generation',
   '/blog': 'Blog | UK Solar Generation',
@@ -168,6 +169,7 @@ export default function App() {
         <Route path="/" element={<HomePage onQuote={onQuote} headline={t.headline} />} />
         <Route path="/solar-pv" element={<SolarPVPage onQuote={onQuote} />} />
         <Route path="/battery-storage" element={<BatteryPage onQuote={onQuote} />} />
+        <Route path="/ev-charging" element={<EVChargingPage onQuote={onQuote} />} />
         <Route path="/commercial-solar" element={<CommercialPage onQuote={onQuote} />} />
         <Route path="/case-studies" element={<CaseStudiesPage onQuote={onQuote} />} />
         <Route path="/blog" element={<BlogPage onQuote={onQuote} />} />

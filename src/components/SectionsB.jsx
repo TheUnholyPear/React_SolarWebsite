@@ -317,7 +317,7 @@ export function Footer() {
   ];
   const social = { Facebook: "facebook", Instagram: "instagram", X: "x", LinkedIn: "linkedin", YouTube: "youtube" };
   const HREFS = {
-    "Solar panels": "/solar-pv", "Battery storage": "/battery-storage", "EV charging": "/solar-pv",
+    "Solar panels": "/solar-pv", "Battery storage": "/battery-storage", "EV charging": "/ev-charging",
     "Commercial solar": "/commercial-solar", "Other products": "/",
     "About us": "/", "Case studies": "/case-studies", "Reviews": "/#reviews", "FAQ": "/#faq", "Blog": "/blog",
   };

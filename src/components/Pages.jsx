@@ -129,6 +129,42 @@ export function BatteryPage({ onQuote }) {
   );
 }
 
+export function EVChargingPage({ onQuote }) {
+  return (
+    <>
+      <PageHeader eyebrow="EV charging" crumb="EV charging"
+        title="Charge your car with your own sunshine"
+        body="Install a smart home or workplace EV charger and power your electric vehicle with the solar energy your roof already makes. We integrate the charger with your system so you fuel up for free whenever the sun's out."
+        onQuote={onQuote} secondary="Book an install" img="features-2.jpg" />
+      <HowItWorks onQuote={onQuote} />
+      <FeatureSplit eyebrow="Solar-linked charging"
+        title="Power your car from your roof"
+        body="Link your charger to your solar system and it charges from surplus generation first, only topping up from the grid when it needs to. Charge on sunshine, not standing charges."
+        bullets={["Charges free from surplus solar", "Eco, Fast and Boost charging modes", "Falls back to the grid only when needed"]}
+        img="features-2.jpg" reverse />
+      <FeatureSplit eyebrow="Home & workplace"
+        title="Chargers for the driveway or the business"
+        body="From a single 7kW home unit to multi-bay workplace and fleet installs, we fit OZEV-approved chargers to suit your property and your vehicles."
+        bullets={["7kW home & 22kW three-phase options", "Tethered or untethered units", "Single home, workplace or fleet"]}
+        img="visual-graphic.jpg" scheme="scheme-1" />
+      <FeatureSplit eyebrow="Smart scheduling"
+        title="Smart, app-controlled charging"
+        body="Set charge times around cheap off-peak tariffs, monitor your usage and costs, and let the charger do the thinking — all from your phone."
+        bullets={["Schedule charging for off-peak rates", "Monitor usage and running costs", "Over-the-air updates and support"]}
+        img="cta.jpg" reverse />
+      <Pricing onQuote={onQuote} eyebrow="Investment" title="EV charger pricing"
+        subtitle="Home chargers from £995 fully installed, with solar-linked and workplace options available."
+        tiers={[
+          { name: "7kW Home Charger", sub: "Standard home install", price: "£995", feats: ["Full overnight charge", "OZEV-approved unit", "Tethered or socketed", "Standard install included"] },
+          { name: "7kW Solar-Linked", sub: "Most popular", price: "£1,295", feats: ["Charges from surplus solar", "Eco / Fast / Boost modes", "App scheduling & monitoring", "Off-peak tariff ready"] },
+          { name: "22kW Workplace", sub: "Business & fleet", price: "from £2,200", feats: ["Three-phase fast charging", "Multiple bays available", "Load balancing", "Usage reporting"] },
+        ]} />
+      <Cta onQuote={onQuote} />
+      <Footer />
+    </>
+  );
+}
+
 export function CommercialPage({ onQuote }) {
   return (
     <>
