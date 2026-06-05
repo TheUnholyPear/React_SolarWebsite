@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Icon, Button, Badge, Input, Card, Stars, Logo, scrollToId } from './primitives';
+import { Icon, Button, Badge, Input, Card, Stars, Logo, scrollToId, asset } from './primitives';
 
 export function CaseStudies({ onQuote }) {
   const cats = ["View all", "Residential", "Commercial", "Battery"];
@@ -28,7 +28,7 @@ export function CaseStudies({ onQuote }) {
           {shown.length ? shown.map((c) => (
             <div key={c.title} className="kit-card-hover" style={{ background: "#fff", borderRadius: "var(--radius-card)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative" }}>
-                <img src={"/assets/images/" + c.img} alt=""
+                <img src={asset("/assets/images/" + c.img)} alt=""
                   style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
                 <div style={{ position: "absolute", top: 12, left: 12, display: "flex", gap: 6, alignItems: "center" }}>
                   <Badge>{c.tag}</Badge>
@@ -71,7 +71,7 @@ export function Testimonials() {
                 <p className="text-medium" style={{ marginTop: 24 }}>&ldquo;{r.quote}&rdquo;</p>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 24 }}>
-                <img src={"/assets/images/" + r.img} alt="" style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }} />
+                <img src={asset("/assets/images/" + r.img)} alt="" style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }} />
                 <div>
                   <p className="text-regular" style={{ fontWeight: 600 }}>{r.name}</p>
                   <p className="text-regular">{r.role}</p>
@@ -195,7 +195,7 @@ export function Cta({ onQuote }) {
             <Button variant="blue" onClick={onQuote}>Book a survey</Button>
           </div>
         </div>
-        <img className="kit-img" src="/assets/images/visual-graphic.jpg" alt="" style={{ height: 420 }} />
+        <img className="kit-img" src={asset("/assets/images/visual-graphic.jpg")} alt="" style={{ height: 420 }} />
       </div>
     </section>
   );
@@ -351,7 +351,7 @@ export function Footer() {
                     <li key={l} style={{ padding: "8px 0" }}>
                       {h === "Follow us" ? (
                         <a href="#" onClick={(e) => e.preventDefault()} className="text-small" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-                          <img className="uksg-i uksg-i--invert" src={"/assets/icons/brand/" + social[l] + ".svg"} alt="" style={{ width: 20, height: 20 }} />{l}
+                          <img className="uksg-i uksg-i--invert" src={asset("/assets/icons/brand/" + social[l] + ".svg")} alt="" style={{ width: 20, height: 20 }} />{l}
                         </a>
                       ) : (
                         <Link to={HREFS[l] || "/"} className="text-small" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>

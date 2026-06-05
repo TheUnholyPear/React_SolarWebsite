@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Icon, Button, Badge, Card } from './primitives';
+import { Icon, Button, Badge, Card, asset } from './primitives';
 import { HowItWorks, Benefits, TrustBar } from './SectionsA';
 import { CaseStudies, Testimonials, Pricing, Faq, Cta, Footer } from './SectionsB';
 
@@ -8,7 +8,7 @@ export function PageHeader({ eyebrow, title, body, onQuote, secondary = "Book a 
     <section className="scheme-6" style={{
       padding: "0 5%",
       ...(img && {
-        backgroundImage: `linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.62)), url(/assets/images/${img})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.62)), url(${asset("/assets/images/" + img)})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       })
@@ -51,7 +51,7 @@ export function FeatureSplit({ eyebrow, title, body, bullets, img, reverse, sche
             </div>
           )}
         </div>
-        <img className="kit-img" src={"/assets/images/" + img} alt="" style={{ height: 460, order: reverse ? 1 : 2 }} />
+        <img className="kit-img" src={asset("/assets/images/" + img)} alt="" style={{ height: 460, order: reverse ? 1 : 2 }} />
       </div>
     </section>
   );
@@ -183,7 +183,7 @@ function ArticleCard({ img, cat, title, excerpt, date, read }) {
   return (
     <a href="#" onClick={(e) => e.preventDefault()} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
       <Card>
-        <img className="kit-img" src={"/assets/images/" + img} alt="" style={{ aspectRatio: "16 / 10", borderRadius: 0 }} />
+        <img className="kit-img" src={asset("/assets/images/" + img)} alt="" style={{ aspectRatio: "16 / 10", borderRadius: 0 }} />
         <div style={{ padding: 24 }}>
           <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 14 }}>
             <Badge>{cat}</Badge>

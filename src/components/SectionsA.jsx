@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Icon, Button, Card, scrollToId } from './primitives';
+import { Icon, Button, Card, scrollToId, asset } from './primitives';
 
 function useCountUp(target, duration = 1800) {
   const [val, setVal] = useState(0);
@@ -42,7 +42,7 @@ export function Hero({ onQuote, headline }) {
   return (
     <section className="scheme-1" style={{ position: "relative", padding: "0 5%", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <img ref={imgRef} src="/assets/images/cta.jpg" alt="" style={{ width: "100%", height: "115%", objectFit: "cover", willChange: "transform" }} />
+        <img ref={imgRef} src={asset("/assets/images/cta.jpg")} alt="" style={{ width: "100%", height: "115%", objectFit: "cover", willChange: "transform" }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,var(--hero-overlay,.55))" }} />
       </div>
       <div className="kit-container" style={{ position: "relative", zIndex: 1, maxWidth: 768 }}>
@@ -124,7 +124,7 @@ export function Features({ onQuote }) {
                   <Button variant="link" iconRight={<Icon name="chevron_right" size={20} />} onClick={() => navigate(it.to)}>Learn more</Button>
                 </div>
               </div>
-              <img className="kit-img" src={"/assets/images/" + it.img} alt="" style={{ height: 440 }} />
+              <img className="kit-img" src={asset("/assets/images/" + it.img)} alt="" style={{ height: 440 }} />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
+export const asset = (p) => import.meta.env.BASE_URL + String(p).replace(/^\//, '');
 const ICON_BASE = "/assets/icons/lucide/";
 const ICON_ALIAS = {
   tools_installation_kit: "sun", storage: "battery-charging", add_business: "building-2",
@@ -9,7 +10,7 @@ const ICON_ALIAS = {
   verified: "badge-check", design_services: "pencil-ruler", approval: "clipboard-check",
   engineering: "wrench", play_circle: "circle-play", check: "check", star: "star-filled",
 };
-export const iconUrl = (name) => ICON_BASE + (ICON_ALIAS[name] || name) + ".svg";
+export const iconUrl = (name) => asset(ICON_BASE + (ICON_ALIAS[name] || name) + ".svg");
 
 export function scrollToId(id) {
   const el = document.getElementById(id);
@@ -49,7 +50,7 @@ export function Card({ children, style = {}, className = "" }) {
 export function Logo({ dark = false, height = 44 }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <img src="/assets/uksg-real-logo.png" alt="UK Solar Generation" style={{ height, display: "block" }} />
+      <img src={asset("/assets/uksg-real-logo.png")} alt="UK Solar Generation" style={{ height, display: "block" }} />
       <svg width="152" height="48" viewBox="0 0 152 48" aria-hidden="true">
         <text x="0" y="21.5" fontFamily="Manrope, 'Helvetica Neue', Arial, sans-serif" fontSize="16" fontWeight="800" letterSpacing="1.5" fill={dark ? "#ffffff" : "#191919"}>UK SOLAR</text>
         <text x="0.5" y="37" fontFamily="Manrope, 'Helvetica Neue', Arial, sans-serif" fontSize="9.5" fontWeight="600" letterSpacing="4.3" fill={dark ? "rgba(255,255,255,0.6)" : "#7F7F7F"}>GENERATION</text>
